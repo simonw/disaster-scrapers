@@ -18,7 +18,9 @@ def discover_scrapers():
 
 
 if __name__ == "__main__":
-    TOKEN = os.environ["GITHUB_TOKEN"]
+    github_token = os.environ.get("GITHUB_TOKEN")
     for scraper_class in discover_scrapers():
-        scraper = scraper_class(TOKEN)
+        scraper = scraper_class(github_token)
+        if github_token is None:
+            scraper.test_mode = True
         scraper.scrape_and_store()

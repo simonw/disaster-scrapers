@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run:
           command: |
-            sudo pip install github-contents requests
+            sudo pip install github-contents requests bs4 html5lib
             python scrape_all.py
 
 workflows:
