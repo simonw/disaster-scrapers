@@ -16,6 +16,7 @@ jobs:
       - run:
           name: Run all of the scrapers
           command: |
+            . venv/bin/activate
             python scrape_all.py
       - save_cache:
           key: deps1-{{ .Branch }}-{{ checksum "requirements.txt" }}
