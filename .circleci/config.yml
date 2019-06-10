@@ -1,0 +1,27 @@
+version: 2
+jobs:
+  fetch_and_commit:
+    docker:
+      - image: circleci/python:3.6.4
+    steps:
+      - checkout
+      - run:
+          command: |
+            sudo pip install github-contents requests
+            python scrape_all.py
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - fetch_and_commit
+  nightly:
+    triggers:
+      - schedule:
+          cron: "0 * * * *"
+          filters:
+            branches:
+              only:
+                - master
+    jobs:
+      - fetch_and_commit
