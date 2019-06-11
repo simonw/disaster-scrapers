@@ -5,8 +5,8 @@ import requests
 class PGEOutages(DeltaScraper):
     url = "https://apim.pge.com/cocoutage/outages/getOutagesRegions?regionType=city&expand=true"
     owner = "simonw"
-    repo = "disaster-data"
-    filepath = "power/pge-outages.json"
+    repo = "pge-outages"
+    filepath = "pge-outages.json"
 
     record_key = "outageNumber"
     noun = "outage"
