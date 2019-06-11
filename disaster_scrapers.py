@@ -163,7 +163,8 @@ class DeltaScraper(Scraper):
                 ][0]
             except IndexError:
                 continue
-            changed_records.append((old_record, new_record))
+            if json.dumps(old_record, sort_keys=True) != json.dumps(new_record, sort_keys=True):
+                changed_records.append((old_record, new_record))
 
         if self.show_changes and changed_records:
             messages = []
