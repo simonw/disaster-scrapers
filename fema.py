@@ -13,9 +13,7 @@ class FemaShelters(DeltaScraper):
 
     def fetch_data(self):
         data = requests.get(self.url, timeout=10).json()
-        return [
-            feature["properties"] for feature in data["features"]
-        ]
+        return [feature["properties"] for feature in data["features"]]
 
     def display_record(self, record):
         display = []
@@ -23,7 +21,9 @@ class FemaShelters(DeltaScraper):
             "  {SHELTER_NAME} in {CITY}, {STATE} ({SHELTER_STATUS})".format(**record)
         )
         display.append(
-            "    https://www.google.com/maps/search/{LATITUDE},{LONGITUDE}".format(**record)
+            "    https://www.google.com/maps/search/{LATITUDE},{LONGITUDE}".format(
+                **record
+            )
         )
         display.append("    population = {TOTAL_POPULATION}".format(**record))
         display.append("")

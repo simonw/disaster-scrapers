@@ -7,10 +7,7 @@ class Scraper:
     owner = None
     repo = None
     filepath = None
-    committer = {
-        "name": "disaster-scrapers",
-        "email": "none@example.com"
-    }
+    committer = {"name": "disaster-scrapers", "email": "none@example.com"}
     test_mode = False
 
     def __init__(self, github_token):
