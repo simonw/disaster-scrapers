@@ -43,7 +43,8 @@ class Scraper:
                 self.last_data = json.loads(content)
                 self.last_sha = sha
             except GithubContents.NotFound:
-                pass
+                self.last_data = None
+                self.last_sha = None
 
         if self.last_data == data:
             print("%s: Nothing changed" % self.filepath)
