@@ -16,20 +16,22 @@ class SCEOutages(DeltaScraper):
         return data["outageMapDataResponse"]["AOCIncidents"]["incident"]
 
     def display_record(self, outage):
+        # Need to .strip() trailing whitespace from county
+        fixed = {**outage, **{"countyName": (outage.get("countyName") or "").strip()}}
         display = []
         display.append(
             "  {incidentId} in {cityName} {countyName} affecting {numberOfCustomersAffected}".format(
-                **outage
+                **fixed
             )
         )
         display.append(
             "    https://www.google.com/maps/search/{centroidY},{centroidX}".format(
-                **outage
+                **fixed
             )
         )
         display.append(
             "    {memoCauseCodeDescription} - {crewStatusCodeDescription}".format(
-                **outage
+                **fixed
             )
         )
         display.append("")
