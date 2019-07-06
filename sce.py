@@ -17,6 +17,7 @@ class SCEOutages(DeltaScraper):
 
     def display_record(self, outage):
         display = []
+        print(outpage)
         display.append(
             "  {incidentId} in {cityName} {countyName} affecting {numberOfCustomersAffected}".format(
                 outage
