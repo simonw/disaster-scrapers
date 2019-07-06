@@ -17,20 +17,19 @@ class SCEOutages(DeltaScraper):
 
     def display_record(self, outage):
         display = []
-        print(outage)
         display.append(
             "  {incidentId} in {cityName} {countyName} affecting {numberOfCustomersAffected}".format(
-                outage
+                **outage
             )
         )
         display.append(
             "    https://www.google.com/maps/search/{centroidY},{centroidX}".format(
-                outage
+                **outage
             )
         )
         display.append(
             "    {memoCauseCodeDescription} - {crewStatusCodeDescription}".format(
-                outage
+                **outage
             )
         )
         display.append("")
