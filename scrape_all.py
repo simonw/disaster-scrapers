@@ -2,6 +2,7 @@ from disaster_scrapers import Scraper
 import pathlib
 import importlib
 import os
+import sys
 
 
 def discover_scrapers(token):
@@ -30,4 +31,7 @@ if __name__ == "__main__":
     for scraper in discover_scrapers(github_token):
         if github_token is None:
             scraper.test_mode = True
-        scraper.scrape_and_store()
+        try:
+            scraper.scrape_and_store()
+        except Exception as e:
+            print(e, file=sys.stderr)
