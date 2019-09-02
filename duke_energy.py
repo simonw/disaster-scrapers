@@ -3,6 +3,9 @@ import requests
 
 
 class DukeEnergyScraper(DeltaScraper):
+    owner = "simonw"
+    repo = "disaster-data"
+
     record_key = "areaOfInterestId"
     show_changes = True
     noun = "county summary"
