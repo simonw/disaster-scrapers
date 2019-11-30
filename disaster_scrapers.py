@@ -173,8 +173,8 @@ class DeltaScraper(Scraper):
             messages = []
             messages.append(
                 "{} {} changed:".format(
-                    len(removed_ids),
-                    self.noun if len(removed_ids) == 1 else self.noun_plural,
+                    len(changed_records),
+                    self.noun if len(changed_records) == 1 else self.noun_plural,
                 )
             )
             for old_record, new_record in changed_records:
