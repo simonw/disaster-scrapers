@@ -23,7 +23,7 @@ class DukeEnergyScraper(DeltaScraper):
         county_summaries = requests.get(
             url,
             headers={
-                "Authorization": "Basic WVFKRjNFemZsMTAzYUpPZ0NIY3E2ajZmSWYwRW9TRWg6YXFuejNDNDg1VEVXOVB0cQ=="
+                "Authorization": "Basic OXUxRmdtcXJNVlBJUEZGeE41aVZJbEFmRHpoMDhNQlI6Y1g0QTJmeFdXMG5XVlRhNg=="
             },
         ).json()["data"]
         # Flatten out the nested "areaOfInterestSummary" array
