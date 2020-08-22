@@ -27,7 +27,7 @@ def discover_scrapers(token):
 
 
 if __name__ == "__main__":
-    github_token = os.environ.get("GITHUB_TOKEN")
+    github_token = os.environ.get("OTHER_REPOS_TOKEN")
     for scraper in discover_scrapers(github_token):
         if github_token is None:
             scraper.test_mode = True
