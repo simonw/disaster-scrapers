@@ -1,6 +1,6 @@
 # disaster-scrapers
 
-[![CircleCI](https://circleci.com/gh/simonw/disaster-scrapers.svg?style=svg)](https://circleci.com/gh/simonw/disaster-scrapers)
+[![Run scrapers](https://github.com/simonw/disaster-scrapers/workflows/Run%20scrapers/badge.svg)](https://github.com/simonw/disaster-scrapers/actions?query=workflow%3A%22Run+scrapers%22)
 
 Scrapers for disaster data - writes to https://github.com/simonw/disaster-data
 
