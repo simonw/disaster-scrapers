@@ -29,4 +29,6 @@ jobs:
       run: |
         pip install -r requirements.txt
     - name: Run scrapers
+      env:
+        OTHER_REPOS_TOKEN: ${{ secrets.OTHER_REPOS_TOKEN }} 
       run: python scrape_all.py
