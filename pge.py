@@ -12,7 +12,7 @@ class PGEOutages(DeltaScraper):
     noun = "outage"
 
     def fetch_data(self):
-        data = requests.get(self.url, timeout=10).json()
+        data = requests.get(self.url, timeout=10, verify=False).json()
         # Flatten into a list of outages
         outages = []
         for region in data["outagesRegions"]:
